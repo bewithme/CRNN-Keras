@@ -4,7 +4,7 @@ from keras.callbacks import EarlyStopping, ModelCheckpoint
 from Image_Generator import TextImageGenerator
 from Model import get_Model
 from parameter import *
-K.set_learning_phase(0)
+#K.set_learning_phase(0)
 
 # # Model description and training
 
@@ -38,4 +38,4 @@ model.fit_generator(generator=tiger_train.next_batch(),
                     epochs=30,
                     callbacks=[checkpoint],
                     validation_data=tiger_val.next_batch(),
-                    validation_steps=int(tiger_val.n / val_batch_size))
+                    validation_steps=200)
