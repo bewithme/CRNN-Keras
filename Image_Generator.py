@@ -27,7 +27,7 @@ class TextImageGenerator:
         self.imgs = np.zeros((self.n, self.img_h, self.img_w))
         self.texts = []
 
-    ## samples의 이미지 목록들을 opencv로 읽어 저장하기, texts에는 label 저장
+
     def build_data(self):
         print(self.n, " Image Loading start...")
         for i, img_file in enumerate(self.img_dir):
@@ -38,8 +38,8 @@ class TextImageGenerator:
 
             self.imgs[i, :, :] = img
             self.texts.append(img_file[0:-4])
-        print(len(self.texts) == self.n)
-        print(self.n, " Image Loading finish...")
+
+        print("the total images is",self.n)
 
     def next_sample(self):      ## index max -> 0 으로 만들기
         self.cur_index += 1
